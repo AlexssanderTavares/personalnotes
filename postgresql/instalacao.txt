@@ -1,0 +1,12 @@
+Processo de instalação
+https://www.postgresql.org/download/linux/debian/#apt
+
+sudo apt install -y postgresql-common
+sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh
+sudo apt update
+sudo apt upgrade -y
+sudo apt install postgresql-<version number>
+
+
+
+

@@ -1,0 +1,33 @@
+Configurações de segurança
+
+É necessário mudar a senha padrão do usuário postgres pois certamente você não saberá qual é e dificilmente terá acesso a ela
+Para isso, use o usuário root do sistema, e use o comando $passwd postgres
+O terminal irá solicitar uma nova senha e você terá de repeti-la
+
+No utilitario psql, você irá digitar o comando \password, que irá solicitar a criação de uma nova senha, você a cria normalmente
+Aṕós isso, voce precisa alterar o arquivo pg_hba.conf
+Para localizar ele, basta buscar o arquivo enquanto no utilitario psql, usando o comando show hba_file;
+
+Ele irá retornar o caminho do arquivo, algo assim: /etc/postgresql/17/main/pg_hba.conf
+Então você pode executar um comando shell direto no psql ou sair dele e com o usuário do sistema editar o arquivo com o nano
+Com arquivo aberto no editor nano, procure pela linha comentada # Database administrative login by Unix domain socket
+Abaixo dela terão linhas normais, na coluna onde fica o METHOD, provavelmente estará como peer (que presume que o mesmo super usuário ou root do sistema seja o super usuário do postgres), você terá que alterar para md5, que irá solicitar a senha que foi registrada no banco
+Após as etapas, reinicie a conexão do servidor do postgresql com systemctl restart postgresql
+
+
+Criando novo super usuário
+
+logado como superusuario padrão do postgres no terminal, execute o createuser com as flags -dPs (explicado no manual do createuser)
+Dessa forma: createuser <nomedousuario> -dPs
+Vai solicitar uma senha para esse usuario
+E em seguida a senha do super usuario do postgres que tem essa permissão de criar novas roles de super usuario
+apos isso configure o hba_file novamente, inserindo abaixo do usuario postgres que voce configurou anteriormente
+local       all         <nomedousuario>         md5 (ou o method desejado)
+salve o arquivo e reinicie o sevidor do postgresql
+Então execute no terminal do sistema, psql -U <nomedousuario> <bancodedadosdesejado>
+Deve solicitar a senha e se tudo der certo, execute o \conninfo no utilitario psql
+
+
+Para deletar é so executar dropuser <nomedousuario>
+Vai solicitar a senha do postgres
+E verifique com \du no utilitario psql para ter certeza de que correu tudo bem, se não aparecer mais o usuario, então deu certo

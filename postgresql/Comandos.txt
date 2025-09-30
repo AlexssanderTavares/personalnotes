@@ -1,0 +1,47 @@
+Comandos postgres
+
+Entrando no BASH
+
+sudo -i -u postgres - para entrar no usuario do postgres
+digite "psql" e aperte Enter para entrar no BASH
+psql -h localhost(ou qualquer outro host) -U <username> -d <database>
+
+Todos os comandos do BASH do postgres é feito através de \ seguido do comando
+
+o superusuario do psql é marcado por "#" depois do sinal de "=" (postgres=#)
+
+create user <username> with password 'password'; - cria um novo usuário para gerenciar o postgres
+select version(); - lista todas as versões disponíveis instaladas no PC para que o usuario selecione uma
+alter user <username> ou <postgres> with password 'new password'; - altera a senha do usuario passado como parametro
+create database bank;  - cria um banco de dados novo
+select <nome da coluna> from <table>; - retorna todos os registros da coluna de uma tabela
+create table <table name>(numbe_name int primary key, varchar(100) not null); - cria tabela com o nome e os tipos de dados que cada coluna terá
+insert into <table name> values() - insere um novo registro na tabela, onde seus dados será de acordo com os valores passados como parametro, na mesma ordem como a tabela e os tipos de dados foram declarados quando a tabela foi criada
+select * from <table name>; - retorna uma lista de todos os registros da tabela.
+
+
+\conninfo - imprime as informações de conexões do servidor do postgres (via soquete caso seja conexão local e a porta local)
+\l - lista os bancos de dados existentes
+\q - sai do BASH do postgres
+\password - redefine a senha para uma nova
+\c <database> - conecta a um banco de dados
+\dt - lista todas as tabelas(relações) de um banco de dados
+\dS - list atodas as tabelas do sistema do postgres, do database pg_catalog
+\q - desconecta do banco de dados atual
+\? - mostra a lista inteira de comandos internos do psql
+\help - lista os comandos de SQL
+\du - lista todos os usuários do postgres
+\d - lista todas as tabelas criadas
+\! <comando do SO> - executa um comando do sistema operacional enquanto permanece no psql
+
+
+
+
+Comandos fora do BASH do Postgres
+
+sudo systemctl status postgresql - para chegar o status de conexão ao servidor do postgres
+sudo systemctl stop postgresql - para parar as atividades do servidor postgres
+sudo systemctl start postgresql - para iniciar as atividades do servidor postgres
+sudo systemctl restart postgresql - reinicia o servidor do postgresql
+man createuser - mostra o manual do comando createuser
+|||||||||||||| --interactve - executa o comando de forma que o usuário possa ir interagindo conforme as etapas de criação do usuario
