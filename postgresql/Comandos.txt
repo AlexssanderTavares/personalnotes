@@ -26,14 +26,13 @@ select * from <table name>; - retorna uma lista de todos os registros da tabela.
 \password - redefine a senha para uma nova
 \c <database> - conecta a um banco de dados
 \dt - lista todas as tabelas(relações) de um banco de dados
-\dS - list atodas as tabelas do sistema do postgres, do database pg_catalog
+\dS - lista todas as tabelas do sistema do postgres, do database pg_catalog
 \q - desconecta do banco de dados atual
 \? - mostra a lista inteira de comandos internos do psql
 \help - lista os comandos de SQL
 \du - lista todos os usuários do postgres
 \d - lista todas as tabelas criadas
 \! <comando do SO> - executa um comando do sistema operacional enquanto permanece no psql
-
 
 
 

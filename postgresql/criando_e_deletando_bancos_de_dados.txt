@@ -1,0 +1,38 @@
+CRIAÇÃO E DELEÇÃO DE OBJETOS DO POSTGRESQL
+
+Use a instrução CREATE <tipo de objeto> <nome do objeto>;
+
+CRIAÇÃO DE BANCOS DE DADOS
+
+CREATE DATABASE banco_teste;
+
+ou podendo passar alguns outros parametros durante a criação do banco, como abaixo
+
+CREATE DATABASE banco_teste
+WITH
+OWNER = usuário proprietario
+ENCODING = "UTF8" (EXEMPLO)
+LC_COLLATE = 'pt_BR.UTF-8'
+LC_CTYPE = 'pt_BR.UTF-8' (TIPOS DE CARACTERES)
+TABLESPACE = pg_default
+CONNECTION LIMIT -1; (define o numero de conexões simultaneas permitidas a este banco de dados, -1 para sem limites)
+
+estes parametros são definidos dessa forma por padrão de acordo em como ele é instalado na maquina seguindo a linguagem local do sistema operacional, mas caso necessário personalizar, usa-se estes parametros, o usuário proprietario é sempre o usuário que esta logado e criando o banco.
+
+ATRIBUINDO E RETIRANDO PERMISSÕES DE ACESSO AO BANCO
+
+Use a instrução GRANT <tipo de permissão, vide documentação> ALL (para todas as permissões) ON <tipo de objeto> DATABASE <nome do objeto> TO <nome do usuario>;
+
+Ficando dessa forma:
+
+GRANT ALL ON DATABASE banco_teste TO alexssander;
+
+Para remover as permissões, use a instrução REVOKE e o restante da semantica permanece o mesmo:
+
+REVOKE ALL ON DATABASE banco_teste TO alexssander;
+
+PARA DELETAR UM OBJETO
+
+Use a intrução DROP <tipo do objeto> <nome do objeto>;
+
+Se o usuário tiver as devidas permissões, o resultado esperado é o echo: DROP DATABASE
