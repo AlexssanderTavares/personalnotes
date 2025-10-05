@@ -9,6 +9,19 @@ As constraints são as restrições que o dado pode ter:
  - se é chave primaria (PRIMARY KEY)
  - se é unique (UNIQUE)
  - se pode ou não ser nulo (NULL, NOT NULL)
- - se é chave estrangeira (FOREIGN KEY)
+ - se é chave estrangeira (REFERENCES nome_tabela(nome_coluna_chave_estrangeira))
  - checar um valor dentro de uma condicional (CHECK(x > 0))
  - valor padrão (DEFAULT)
+
+
+ Um exemplo de criação de tabela usando algumas constraints, imagine que já exista uma tabela clientes e uma tabela produtos para este exemplo.
+
+ CREATE TABLE pedidos(
+    cod_pedido SERIAL PRIMARY KEY,
+    cod_cliente INT NOT NULL REFERENCES clientes(cod_cliente),
+    cod_produto INT NOT NULL,
+    qtde SMALLINT NOT NULL,
+    FOREIGN KEY (cod_produto) REFERENCES produtos(cod_produto)
+ );
+
+ No exemplo, podemos ver duas formas de fazer o relacionamento com chaves estrangeiras, uma fazendo direto na declaração do dado, e a outra no final onde definimos a FOREIGN KEY (nome da coluna da tabela) REFERENCES nome_da_tabela_de_onde_virá_o_dado (nome da coluna dessa tabela)
