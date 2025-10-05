@@ -1,0 +1,63 @@
+TIPOS NUMERICOS
+
+smallint - inteiros de 2 bytes
+
+int - inteiros de 4 bytes
+
+bigint - inteiros de 8 bytes
+
+numeric(precisão,escala) - numero de ponto flutuante (float) onde: precisão = numero de digitos totais; escala = nº de casas decimais
+
+real - 32 bits, ate 6 digitos decimais de precisão
+
+double precision - 64 bits - variavel, até 15 digitos de precisão
+
+serial - 32 bits de tamanho, com sinal, numeros sequenciais
+
+big serial - 64 bits de tamanho, com sinal, numeros sequenciais
+
+money - 64 bits, com sinal (2⁶³ valores). Para valores monetários
+
+---------------------------------------------------------------------------------------------------------------------
+
+TIPOS DE STRINGS
+
+text - varchar de tamanho ilimitado, preferido para strings
+
+char(n), character(n) - caracteres de tamanho fixo, com padding (preenchimentos) e n caracteres
+
+varchar(n) - varchar de tamanho limitado ate n caracteres
+
+---------------------------------------------------------------------------------------------------------------------
+
+TIPO DE DATA E HORA
+
+date - 4 bytes, apenas datas, precisão de 1 dia
+
+time[without time zone] - 8 bytes, hora sem fuso horário, com precisão de 1 microssegundo
+
+time with time zone - 12 bytes, armazena data e hora com fuso horário, precisão de 1 microssegundo
+
+timestamp with time zone - 8 bytes, armazena data e hora com fuso horário, precisão de 1 microssegundo
+
+timestamp[without time zone] - 8 bytes, armazena data e hora sem fuso horário, precisão de 1 microssegundo
+
+interval - 16 bytes, armazena faixas de tempo, com precisão de 1 microssegundo
+
+---------------------------------------------------------------------------------------------------------------------
+
+TIPOS DIVERSOS
+
+boolean - tipo logico; 8 bits (1 byte) - valores True (1 / yes/ on) ou False (0 / no/ off)
+
+cidr - 7 ou 19 bytes - endereços de rede IPv4 ou IPv6, como 192.168.14.0/24
+
+inet - 7 ou 19 byte - endereços de rede IPv4 ou IPv6, como 192.168.14.22/32
+
+macaddr - 6 bytes (48 bits), como 00:22:33:44:55:b2 ou 0022.3344.55b2 (endereços mac)
+
+Geometric Types - Armazena informações relacionadas com figuras geometricas, como linhas, circulos, poligonos, pontos, caminhos etc
+
+Tipos de Enumeração - Criados pelo usuário, para conjuntos de valores estáticos
+
+tsvector / tsquery - tipos para busca completa de texto em documentos

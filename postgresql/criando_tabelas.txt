@@ -1,0 +1,14 @@
+Use o comando CREATE TABLE da seguinte forma
+
+CREATE TABLE nome_tabela (
+nome_coluna1 tipo_dado constraints,
+nome_coluna2 tipo_dado constraints,
+);
+
+As constraints são as restrições que o dado pode ter:
+ - se é chave primaria (PRIMARY KEY)
+ - se é unique (UNIQUE)
+ - se pode ou não ser nulo (NULL, NOT NULL)
+ - se é chave estrangeira (FOREIGN KEY)
+ - checar um valor dentro de uma condicional (CHECK(x > 0))
+ - valor padrão (DEFAULT)
