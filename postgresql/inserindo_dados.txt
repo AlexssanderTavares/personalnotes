@@ -1,0 +1,15 @@
+Usa-se a instrução INSERT INTO <nome_tabela> (col1,col2,col3...) VALUES (dado1,dado2,dado3...), onde cada valor passado em value deve corresponder a exata mesma ordem que foi especificada das colunas passada no parametro do INSERT INTO
+
+Exemplo:
+
+INSERT INTO clientes(cod_client, name_client, last_name) VALUES (1, 'fulano', 'ciclano');
+
+Dados do tipo varchar devem ser passado entre aspas simples
+
+Você pode fazer inserções multiplas com uma unica instrução, basta adicionar novos parenteses após o primeiro com os novos dados a serem inseridos
+
+INSERT INTO clientes(cod_client, name_client, last_name)
+VALUES
+(1, 'fulano', 'ciclano')
+(2, 'fulana', 'ciclana')
+(3, 'beltrano', 'ciclano');

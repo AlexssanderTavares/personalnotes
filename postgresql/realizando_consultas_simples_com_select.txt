@@ -1,0 +1,8 @@
+Usa-se a instrução SELECT <nome(s) da(s) coluna(s) OU * para retornar todas as colunas> FROM <nome da tabela>;
+Para retornar todos os dados da tabela desejada, ou os dados das colunas especificadas da tabela. A ordem das colunas
+será apresentada na mesma ordem que for passada no comando.
+
+Exemplo
+
+SELECT name_client, last_name FROM clientes;
+SELECT * FROM clientes;
