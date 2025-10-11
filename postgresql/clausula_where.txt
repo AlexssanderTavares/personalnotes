@@ -1,0 +1,11 @@
+Usa se WHERE como instrução para inserir uma condição de filtragem, serve para buscas com SELECT, deleção com DELETE,
+inserções com INSERT e atualizações com UPDATE
+
+NUNCA EXECUTE INSTRUÇÕES DELETE SEM WHERE
+
+Exemplos:
+
+SELECT * FROM clientes WHERE cod_cliente > 0;
+
+DELETE FROM clientes WHERE cod_cliente = 1;
+

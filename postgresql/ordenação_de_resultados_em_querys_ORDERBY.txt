@@ -1,0 +1,16 @@
+Usa-se a instrução ORDER BY para definir em qual ordem uma consulta será exibida, crescente ou decrescente, alfabetica etc
+
+Estrutura:
+
+exemplo com SELECT
+
+SELECT * FROM clientes [WHERE CASO PRECISE FILTRAR] ORDER BY coluna ASC | DESC - ASC para ascentende, do menor para o maior e DESC para descendente, do maior para o menor.
+Por padrão, sempre fica como ordem ASC não sendo então necessário declarar nesse caso.
+
+O ORDER BY pode ser usado para ordenar baseado em mais de uma coluna, onde a segunda ordenação acontecerá em cima do resultado da primeira
+
+SELECT * FROM produtos ORDER BY nome_produto, preco;
+
+Primeiro ele vai ordenar em ordem alfabetica, e caso hajam nomes iguais, ele irá realizar a segunda ordenação pelo criterio da segunda coluna, preco, e por ser de um tipo numerico, sera ordenado de forma ASC.
+
+Em caso de dados NULOS, a ordenação por padrão deixará os nulos no final, você pode mudar isso com os modificadores NULLS FIRST | LAST
