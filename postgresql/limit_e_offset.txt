@@ -1,0 +1,12 @@
+Permitem obter uma parte especificada das linhas retornadas por uma consulta SQL.
+
+EXEMPLO:
+
+SELECT coluna(s) FROM tabela ORDER BY coluna LIMIT contagem | all OFFSET deslocamento
+
+sendo:
+contagem = um numero inteiro que representa a quantidade de linhas a exibir
+ALL = (padrão) mostra todas as linhas
+deslocamento = um numero inteiro que representa quantas linhas devem ser puladas antes de iniciar a contagem do LIMIT
+
+Não é estritamente necessário usar LIMIT e OFFSET, você pode usá-los de forma independente bem como também não é estritamente necessário o uso do ORDER BY junto. Geralmente o OFFSET é o ultimo comando a ser declarado

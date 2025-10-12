@@ -9,3 +9,14 @@ SELECT * FROM clientes WHERE cod_cliente > 0;
 
 DELETE FROM clientes WHERE cod_cliente = 1;
 
+Operadores de comparação
+
+< menor que
+> maior que
+= igual a
+!= ou <> diferente de (não igual a)
+<= menor ou igual a
+>= maior ou igual a
+
+São os operadores que comparam valores e retornam valores booleanos (verdadeiro ou falso), usados em clausulas.
+Pode ser usado também as cláusulas AND e/ou OR para colocar mais de uma condição.
