@@ -1,0 +1,17 @@
+O operador BETWEEN serve para comparar valores a partir de intervalos de dados (podendo ser datas ou valores numéricos)
+
+EXEMPLO:
+
+SELECT * FROM produto WHERE qt_produto BETWEEN 0 AND 20;
+
+Usa-se o AND para definir o intervalo (range)
+
+Também pode ser na negativa
+
+SELECT * FROM produto WHERE qt_produto NOT BETWEEN 0 AND 20;
+
+Por se tratar de um operador de comparação, então usa-se em conjunto com a clausula WHERE pois trata-se de uma condicional lógica
+
+Podem haver mais de um uso da clausula BETWEEN, sempre que ocorrer, o operador OR deve ser usado ao final da declaração do intervalo
+
+SELECT * FROM produto WHERE qt_produto BETWEEN 0 AND 20 OR qt_produto BETWEEN 80 AND 100;
