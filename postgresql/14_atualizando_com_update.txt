@@ -1,0 +1,8 @@
+Usado para atualizar os registros em uma tabela
+
+Exemplo
+
+UPDATE tabela SET coluna = novo_valor;
+
+UPDATE tabela SET coluna = novo_valor WHERE coluna_indice = valor_indice;
+

@@ -1,0 +1,44 @@
+Funções de Agregação servem para computar um valor único a partir de um conjunto de valores de entrada
+
+Funções básicas:
+COUNT - faz a contagem de itens
+MAX - extrai o valor máximo de um conjunto
+MIN - extrai o valor minimo de um conjunto
+AVG - calcula a média entre um conjunto de valores
+SUM - soma dois ou mais valores
+
+Exemplos
+
+COUNT:
+*   Contando o todas as linhas de uma tabela
+    SELECT COUNT(*) FROM table_name;
+
+*   podemos usar Alias também
+*   SELECT COUNT(*) AS "nome_da_coluna_a_ser_exibida" FROM table_name;
+
+*   contando apenas uma determinada coluna
+*   SELECT COUNT(nome_da_coluna_a_ser_contada) FROM table_name;
+
+*   usando o modificador DISTINCT que retira as repetições de valores
+*   SELECT COUNT(DISTINCT nome_da_coluna_a_ser_contada) FROM table_name;
+
+*   usando com o filtro WHERE
+*   SELECT COUNT(*) FROM table_name WHERE condicional;
+
+MAX e MIN:
+
+*   retorna o maior(MAX) ou menor(MIN) valor de acordo com a coluna passada no argumento da função
+*   SELECT MAX(coluna_de_tipo_de_dado_numerico) FROM table_name;
+
+SUM:
+
+*   retorna a soma de todos os valores da(s) coluna(s) passadas no argumento da função
+*   SELECT SUM(coluna_de_tipo_de_dado_numerico) FROM table_name;
+
+AVG:
+
+*   retorna a média de todos os valores da(s) coluna(s) passadas noa argumento da função, primeiro ele soma todos os valores e depois divide pelo número de linhas
+*   SELECT AVG(coluna_de_tipo_de_dado_numerico) FROM table_name;
+
+*   podemos usar a função ROUND() com o AVG dentro do argumento para arredondar o valor caso haja muitas casas decimais, prieiro a função e depois o numero que irá indicar o numero de casas decimais desejadas a serem retornadas
+*   SELECT ROUND(AVG(coluna_de_tipo_de_dado_numerico), 2) FROM table_name;

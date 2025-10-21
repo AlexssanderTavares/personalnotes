@@ -1,5 +1,0 @@
-Suporta Views, Views Materializadas, Procedimentos Armazenados, Triggers, Particionamento etc
-Permite Operações de manutenção em modo online (sem necessidade de desconectar o servidor dele)
-
-Host do PGADMIN
-http://127.0.0.1/pgadmin4/browser/
