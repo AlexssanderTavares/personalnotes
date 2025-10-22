@@ -1,0 +1,13 @@
+Alias são os apelidos qu damos a qualquer coluna ou tabela do banco de dados ao realizar consultas.
+Também é uma forma de mascarar os nomes reais das colunas das tabelas e das tabelas em si do banco de dados impedindo acesso malicioso aos dados.
+
+Exemplo:
+SELECT coluna1 AS alias_coluna1,
+coluna2 AS alias_coluna2,
+coluna3 AS alias_coluna3,
+FROM tabela AS alias_tabela;
+
+AS é o mesmo que "como" então lê-se coluna1 COMO alias_coluna1...
+
+A partir do momento em que um Alias é definido na query, ao usar outros comandos em sequencia, como ORDER BY podemos usar o Alias definido já na sequência para facilitar a nossa escrita
+
