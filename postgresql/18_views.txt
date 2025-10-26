@@ -1,0 +1,46 @@
+View (exibição / visão) é uma tabela virtual (estrutura de dados) baseada no conjunto de resultados de uma consulta SQL, criada a partir de um conjunto de tabelas (ou outras views) presentes no banco, que servem com tabelas-base.
+
+MOSTRA SEMPRE RESULTADOS DE DADOS ATUALIZADOS, POIS O MOTOR DO BANCO DE DADOS RECRIA OS DADOS TODA VEZ QUE UM USUÁRIO CONSULTA A VISÃO.
+
+Aplicação das Views
+
+    - Simplificar o acesso a dados que estão armazenados em múltiplas tabelas relacionadas
+    - Implementar segurança nos dados de uma tabela, por exemplo criando uma visão que limite os dados que podem ser acessados, por meio de uma cláusula WHERE
+    - Prover isolamento de uma aplicação da estrutura específica de tabelas do banco acessado.
+
+Como funciona:
+    A VIEW é sempre criada em cima do resultado de uma consulta, ou seja, em conjunto a um resultado de um SELECT.
+    Sendo assim temos abaixo uma consulta mais complexa:
+
+    SELECT CL.nome_cliente AS Cliente, PR.nome_produto AS Produto,
+    PE.qtde AS quantidade, PE.cod_pedido AS Pedido,
+    PR.preco * PE.qtde AS Fatura
+    FROM pedidos PE
+    INNER JOIN clientes CL
+        ON PE.cod_cliente = CL.cod_cliente
+    INNER JOIN produtos PR
+        ON PE.cod_produto = PR.cod_produto;
+
+    Essa consulta retornará uma nova tabela com os dados organizados de acordo com a query, mas sempre que precisar obter essa consulta, teríamos que executar esse código complexo, o que não é performático e prático. Com VIEWS podemos executar esse codigo apenas uma vez e ela ficará disponível sempre que solicitada.
+    Para criarmos a VIEW basta colocar sua instrução no início da query:
+
+    CREATE OR REPLACE VIEW Vendas AS
+        SELECT CL.nome_cliente AS Cliente, PR.nome_produto AS Produto,
+        PE.qtde AS quantidade, PE.cod_pedido AS Pedido,
+        PR.preco * PE.qtde AS Fatura
+        FROM pedidos PE
+        INNER JOIN clientes CL
+            ON PE.cod_cliente = CL.cod_cliente
+        INNER JOIN produtos PR
+            ON PE.cod_produto = PR.cod_produto;
+
+    Cria ou substitui a VIEW se ela já existir, no caso, temos que usar o retorno da consulta como um Alias da VIEW.
+    Caso necessite alterar as colunas internas da VIEW é somente executando esta instrução novamente após alterar a query, qualquer outra alteração na VIEW é externa como nome e proprietário etc, que é feito através de outra instrução:
+
+    ALTER VIEW Vendas RENAME TO Faturas; //por exemplo
+
+    E para deletar a VIEW, usa-se o DROP:
+
+    DROP VIEW IF EXISTS Faturas CASCADE;
+
+    Deleta a view se existir e caso exista deleta também todas as views que dependam dela, em cascata.

@@ -1,0 +1,46 @@
+Cláusula JOIN (junção)
+
+Cláusulas JOIN são usadas para combinar dados provenientes de duas ou mais tabelas em um único conjunto de resultados, baseado em condições de join especificadas.
+
+* INNER JOIN: Retorna linhas quando houver pelo menos uma correspondência em ambas as tabelas, ou seja, quando um dado de uma tabela estiver também em outra tabela. Funciona como uma intersecção matemática de dois ou mais conjuntos, onde retorna as linhas pertencentes em ambas (duas ou mais) tabelas (que pode ser interpretado como conjuntos numéricos).
+
+* OUTER JOIN: Retorna linhas mesmo quando não houver pelo menos uma correpondência em uma das tabelas (ou ambas). O OUTER JOIN divide-se em LEFT JOIN, RIGHT JOIN e CROSS JOIN.
+
+Cláusula ON
+
+A cláusula ON determina a condição de JOIN, que indica como as tabelas devem ser comparadas.
+No geral, a comparação ocorre por meio de um relacionamento entre chave primária na primeira tabela e chave estrangeira na segunda tabela.
+
+
+Condição de JOIN
+
+Uma condição de JOIN nomeia uma coluna em cada tabela envolvida no JOIN e indica como as colunas devem ser comparadas.
+No geral, usamos o operador = para obter linhas com colunas correpondentes. É comum usar o relacionamento de PK de uma tabela com FK de outra tabela.
+
+Nomes de Coluna Qualificados
+
+Nome da coluna precedido pelo nome da tabela à qual pertence, separados por um ponto.
+Usamos nomes de colunas qualificados para identificar a qual tabela cada campo envolvido pertence.
+Isso evita erro de ambiguidade caso uma coluna tenha o mesmo nome em duas tabelas diferentes.
+
+Exemplo 1:
+    ...ON pedidos.cod_produto = produtos.cod_produto
+É como referenciar os atributos de objetos através de sua instância enquanto programando usando o paradigma POO.
+
+    SELECT colunas FROM tabela1 INNER JOIN tabela2 ON tabela1.coluna = tabela2.coluna INNERJOIN tabelaN ON tabela1.coluna = tabelaN.coluna WHERE condição_filtragem;
+
+    Onde:
+        tabela1 = tabela que possui a(s) chave(s) estrangeira(s)
+        tabela2 = tabela que possui a chave primária referenciada pela tabela1
+        tabelaN = tabela que possui a chave primária referenciada pela tabela1
+
+Exemplo 2:
+    SELECT PED.cod_pedido, CL.nome_cliente, PR.nome_produto, PE.qtde
+    FROM pedidos AS PED
+    INNER JOIN produtos PR
+    ON PE.cod_produtos = PR.cod_produto
+    INNER JOIN clientes CL
+    ON PE.cod_cliente = CL.cod_cliente
+    WHERE PE.cod_pedido = 9; // usamos filtragem para fazer buscas específicas
+
+    //podemos usar o Alias como nome substituto para a tabela, que é declarado aqui e fica disponível em toda a query. Podemos declarar o Alias sempre que a cláusula aponta para outra tabela (FROM, JOIN)
