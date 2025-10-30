@@ -1,0 +1,37 @@
+Arrays em tabelas de bancos de dados servem para armazenar dados multivalorados numa unica coluna.
+Por exemplo:
+    "Um cliente pode possuir mais de um numero de telefone"
+O numero de telefone pode ser um dado do tipo Varchar(16)[], a declaração do Array é igual como é declarada em C e em algumas outras linguagens derivadas de C.
+
+então temos a sintaxe:
+col_telefone Varchar(16)[] //temos um array de varchar, ou strings
+
+Esse padrão é exclusivo para o PostgreSQL
+
+No padrão do ANSI SQL, que é usado em outros SGBDs, a estrutura fica da seguinte forma:
+
+col_telefone Varchar(16) ARRAY[n_representando_tamanho]
+
+ou
+
+col_telefone Varchar(16) ARRAY //para tamanho dinamico
+
+
+Inserção
+
+    INSERT INTO cliente(col_telefone) VALUES ('{"(11) 98888-8444", "(22) 97777-7333"}');
+
+    //Inserimos então dois telefones na col_telefone, utiliza-se a aspas simples e dentro delas abrimos chaves para acessar a parte interna do array, onde iremos inserir os dados
+
+Consultas
+
+    SELECT col_telefone[1] FROM cliente;
+    // "(22) 97777-7333" será retornado
+
+Atualizando dado
+
+    UPDATE cliente SET col_telefone[index] = dado WHERE id = n;
+    ou
+    UPDATE cliente SET col_telefone = ARRAY["dado1", "dado2"] WHERE id = n;
+
+
