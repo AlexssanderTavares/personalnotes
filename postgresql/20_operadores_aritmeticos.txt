@@ -1,0 +1,21 @@
+OPERADOR    SIGNIFICADO     SINTAXE
+-           Menos Unário    -valor
+^           Exponenciação   valor1 ^ valor2
+*           Multiplicação   valor1 * valor2
+/           Divisão         valor1 / valor2
+%           Módulo          valor1 % valor2
++           Soma            valor1 + valor2
+-           Subtração       valor1 - valor2
+|/          Raiz quadrada   |/ valor
+||/         Raiz cúbica     ||/ valor
+@           Valor Absoluto  @valor
+
+
+Ordem de precedência é igual ao que já existe na matemática, então usamos parenteses nas operações que queremos que sejam calculadas primeiro, sempre calculado na ordem do parenteses mais interno até o ultimo que existir
+
+(((1 + 2) + 4) * 5) + 7
+// 1 + 2 será calculado primeiro, em seguida soma a 4, depois multiplica por 5 e no final soma a 7
+
+A exponenciação também aceita notação científica
+
+6,02e+23 por exemplo
