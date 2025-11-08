@@ -61,3 +61,26 @@ Geometric Types - Armazena informações relacionadas com figuras geometricas, c
 Tipos de Enumeração - Criados pelo usuário, para conjuntos de valores estáticos
 
 tsvector / tsquery - tipos para busca completa de texto em documentos
+
+---------------------------------------------------------------------------------------------------------------------
+
+TIPO IDENTIFICADOR ÚNICO
+
+UUID - O UUID (Universally Unique Identifier) ou GUID (Globally Unique Identifier) é um número de 128 bits (geralmente representado por 32 caracteres hexadecimais em 5 grupos, ex: a1b2c3d4-e5f6-7890-1234-567890abcdef).
+
+    Para gerar UUIDs de forma nativa e eficiente dentro do PostgreSQL, é altamente recomendável usar a extensão uuid-ossp, que fornece várias funções de geração.
+
+    Você precisa instalá-la uma única vez por banco de dados:
+        CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+    Esta extensão é a mais comum. A partir do PostgreSQL 13, a função gen_random_uuid() se tornou nativa e não requer extensão, sendo preferível para geração de UUIDs aleatórios.
+
+    Dentro desta extensão, existem funções que permite a geração nativa de UUIDs com diferentes critérios de segurança:
+
+        uuid_generate_v1() - Garante Ordenação cronológica, recomendado para sistemas distribuídos que precisam de ordenação. É baseado em tempo e MAC Address.
+
+        uuid_generate_v4() - Totalmente aleatório, Mais usado por segurança e imprevisibilidade, ideal para APIs públicas e chaves de segurança.
+
+        gen_random_uuid() - idêntico ao v4, mas nativo, não necessitando instalar a extensão. Padrão para uso geral em versões recentes.
+
+    O melhor uso é em complemento com a cláusula DEFAULT para definir valores padrões para os atributos, desta forma, podemos chamr a função gen_random_uuid() que retornará nosso valor único, aleatório e padrão quando uma nova instância da entidade for inserida no banco.
