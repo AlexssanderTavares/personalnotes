@@ -37,7 +37,7 @@ SUM:
 
 AVG:
 
-*   retorna a média de todos os valores da(s) coluna(s) passadas noa argumento da função, primeiro ele soma todos os valores e depois divide pelo número de linhas
+*   retorna a média de todos os valores da(s) coluna(s) passadas no argumento da função, primeiro ele soma todos os valores e depois divide pelo número de linhas
 *   SELECT AVG(coluna_de_tipo_de_dado_numerico) FROM table_name;
 
 *   podemos usar a função ROUND() com o AVG dentro do argumento para arredondar o valor caso haja muitas casas decimais, prieiro a função e depois o numero que irá indicar o numero de casas decimais desejadas a serem retornadas
