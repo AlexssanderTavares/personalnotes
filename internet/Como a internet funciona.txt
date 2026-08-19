@@ -1,0 +1,55 @@
+Como a internet funciona?
+
+O computador do usuário(cliente) 
+Representação de dados
+
+Todo dado computacional é formado por sinal elétrico(sinais de ondas quandradas) de presença e ausência, que forma um digito binário(binary digit) que representa esse sinal(se não ha sinal é 0 e se ha sinal é 1) na linguagem de baixo nível, que abreviado do inglês forma o TERMO: BIT.
+Diante da limitação de possibilidades em representar dados do mundo real utilizando apenas combinações binárias. Houve-se a necessidade de implementar uma combinação maior, que foi juntar um aglomerado de 8 digitos entre 0s e 1s e formar um pacote de BITs
+que são os BYTES.
+Um BYTE é uma porção mínima que pode representar uma determinada informação.
+
+Proporção númerica e unidades de medidas
+
+1 bit = 01
+1 Byte = 8 bits
+1 KiloByte(KB) = 1024 bytes
+1 MegaByte(MB) = 1024 KiloBytes (KB)
+1 GigaByte(GB) = 1024 MegaBytes (MB)
+1 TeraByte(TB) = 1024 GigaBytes (GB)
+1 PetaByte(PB) = 1024 TeraBytes (TB)
+1 ExaByte(EB) = 1024 PetaBytes (PB)
+1 ZetaByte(ZB) = 1024 ExaBytes (EB)
+1 YotaByte(YB) = 1024 ZetaBytes (ZB)
+
+Sempre que for relacionado a capacidade de armazenamento, será referenciado sua capacidade em Bytes (Ex: MB ou MegaBytes)
+Sempre que for relacionado a capacidade de transmissão de informação, será referenciado sua capacidade em Bits (Ex: Mb ou Megabits) 
+
+Modem
+
+É um componente que, converte os dados formados por sinais de ondas quadradas em sinais de ondas sinoidal(ondas curvadas) no
+processo de comunicação de um computador de usuário com a internet. E o mesmo ocorre em via oposta.
+Desse modo temos:
+Modulação - Conversão de sinais de ondas quadradas em sinais ondas sinoidal.
+Demodulação - Conversão de sinais de ondas sinoidal em sinais de ondas quadradas.
+
+O MODEM É UM GATEWAY(?)
+
+DNS - Domain Name System
+
+São servidores especiais da internet que cadastra e armazena nomes de domínios (Ex: Youtube) e que, ao buscar por esse nome
+na navegação do Browser, ele irá comunicado ao DNS que busque pelo nome requisitado pelo usuário, ao encontrar ele retorna
+o IP do servidor onde aquele domínio está apontando e proporciona a comunicação (através das rotas, ou ROTEAMENTO) do IP usuário com o IP do servidor (do Youtube por exemplo)
+
+Rotas/Roteamento
+
+Como todas as transmissões de dados são feitas através de envios e recebimento de pacotes(bytes) de dados, muitas vezes
+muitos usuários fazem muitas requisições ao mesmo tempo e para evitar que existam gargalos ou congestões numa unica rota entre
+cliente e servidor, são utilizadas mais de uma rota para estabelecer essa conexão sem prejudicar as comunicações com o servidor.
+Como ruas que terminam num mesmo endereço. Sâo caminhos alternativos. Cada pacote de dado pode ser transmitido por uma rota diferente.
+Durante as requisições de dados do IP servidor, até que todos os dados requisitados sejam transmitidos, muitas conexões, em muitas rotas
+diferentes em cada uma destas conexões podem ocorrer em um determinado tempo, de acordo com a velocidade de banda da conexão do usuário com a internet.
+
+
+Codigo Multibyte UTF-8 - ?
+
+

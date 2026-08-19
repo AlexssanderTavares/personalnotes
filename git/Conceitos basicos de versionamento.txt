@@ -1,0 +1,82 @@
+Controle de Versão GIT
+
+Substitui o versionamento local pelo versionamento remoto em Nuvem. Que facilita o acesso a qualquer uma das versões do aplicativo em desenvolvimento
+além de facilitar o entendimento de qualquer alteração que tenha sido feito e quem a fez através de comentários.
+
+Desvantagens do Versionamento local:
+☼ Não sabemos o que mudou de uma versão para a outra;
+☼ Não sabemos quem e nem quando essas modificações foram feitas;
+☼ Grande chance de haver divergências de código caso estejamos trabalhando em equipe;
+☼ Gasto excessivo de espaço em disco;
+☼ Entre outros.
+
+Vantagens do Versionamento remoto:
+☼ Controle do histórico;
+☼ Trabalho em equipe;
+☼ Marcação e resgate de versões estáveis;
+☼ Ramificação de projeto;
+☼ Segurança;
+☼ Rastreabilidade;
+☼ Organização;
+☼ Confiança;
+
+Tipos de controle de versão
+☼ Centralizaods
+☼ Distribuidos
+
+Centralizado - possui uma copia remota armazenada num servidor, e todo o trabalho em cima dessa copia acontece em Rede, dentro do próprio servidor.
+Distribuidos - dispensa a necessidade de um servidor, todas as copias ficam armazenadas localmente, mas pode sim ser utilizado um servidor em conjunto. 
+		Onde funciona de acordo com a necessidade, se algo de errado ocorre com as copias locais, utiliza-se das cópias armazenadas no servidor,
+		caso o servidor fique indisponível, ainda haverá as copias locais (GIT).
+
+GIT
+
+Um repositório é uma pasta a qual o Git deverá Monitorar. Ou seja, é a pasta onde o Git atuará gerenciando as diversas versões dos arquivos ali presentes.
+
+► OS TRÊS ESTADOS DO GIT
+Um repositório GIT tem três áreas principais, são elas:
+☼ Diretório de trabalho - O local onde o programador está trabalhando, atualizando, que não foi comunicado ao Git ainda para criar seus registros;
+☼ Área de preparo - É a área transitória dos arquivos, onde são organizados previamente para que sejam registrados no controle de versão;
+☼ Repositório local - É o local onde o GIT armazena as versões do repositório, onde podem ser acessadas em qualquer ponto ou qualquer momento do desenvolvimento.
+
+Quando trabalhamos com GIT, nossos arquivos podem ser classificados em quatro estados:
+☼ Untracked (Não monitorado)
+☼ Unmodified (Enquanto já está sendo monitorado pelo GIT, ele indica que não houve qualquer modificação feita).
+☼ Modified (A versão atual do codigo sendo trabalhado é identificado pelo monitoramento como diferente das versões atuais no repositório).
+☼ Staged (É o momento em que o arquivo se encontra pronto para ser commitado, está pronto para ser adicionado ao Repositório Local.  [Área de preparo -> Repositório local]
+
+O GIT utiliza o algoritmo de Hash SHA1 para definir quando um arquivo foi modificado.
+Dessa forma o GIT é capaz de identificar quais linhas do arquivo foram modificadas, mantendo assim um histórico de versões para esse arquivo.
+
+► Convenção de commits
+conventionalcommits.org
+semver.org
+
+É uma convenção que define padrões de como os commits devem ser feitos.
+
+Branchs
+
+Branchs são as ramificações (galhos) da arvore de produção.
+Normalmente, inicia-se o GIT no Branch Main (ramo principal), mas podem haver varias outras Branchs crescendo independentes e que,
+no fim de sua produção, podem ser unidas e vinculadas ao Branch Main.
+ 
+Tags
+
+São marcações que indicam uma mudança de estado entre uma versão de um projeto e uma versão nova
+
+GitHub
+
+Push
+
+Primeiro cria-se a conta no serviço
+Depois um repositório com nome e descrição
+Após criar o repositório, ele vai mostrar uma interface com linhas de comando para que possa ser usado no bash para subir repositórios locais para o GitHub, 
+deve-se utilizar o link SSH gerado pelo GitHub.
+É necessário também criar uma chave SSH no GitBash para poder autenticar o usuário atual ao repositório desejado.
+Somente a Branch Main pode ser enviada ao repositório no GitHub
+
+Fork, Pull e Pull Request
+
+Fork - Copia um determinado repositório público, de um outro usuário, para os seus repositórios.
+Pull Request - Solicita ao usuário, ao qual teve o repositório copiado, para que ele faça um git pull no repositorio local com as novas alterações daquele repositório inicial copiado
+Pull - Baixa o repositório remoto como repositório local para que possa ser trabalhado novamente.

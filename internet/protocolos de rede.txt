@@ -1,0 +1,50 @@
+Protocolos - É um padrão de linguagem universal utilizado para que sistemas diferentes se comuniquem entre-si, sendo indiferente a suas linguagens nativas.
+
+Protocolos de Rede - Em rede, um protocolo é uma maneira padronizada de realizar determinadas ações e formatar dados para que dois ou mais dispositivos possam se comunicar e entender um ao outro.
+		Para entender por que os protocolos são necessários, considere o processo de envio de uma carta. No envelope, os endereços estão escritos na seguinte ordem: nome, endereço, cidade, estado e CEP.
+		Se um envelope for colocado em uma caixa de correio com o CEP escrito primeiro, seguido pelo endereço da rua, seguido pelo estado e assim por diante, os correios não o entregarão.
+		Existe um protocolo acordado para escrever endereços para que o sistema postal funcione.
+		Da mesma forma, todos os pacotes de dados de IP devem apresentar determinadas informações em uma determinada ordem e todos os endereços de IP seguem um formato padronizado.
+
+IP - Internet Protocol -  O Protocolo de internet (IP) é um protocolo, ou conjunto de regras, para roteamento e endereçamento de pacotes de dados para que eles possam viajar pelas redes e chegar ao destino correto.
+			Os dados que atravessam a internet são divididos em partes menores, chamadas de pacotes.
+			As informações de IP são anexadas a cada pacote e essas informações ajudam roteadores a enviar pacotes para o lugar certo.
+			Cada dispositivo ou domínio que se conecta à internet recebe um endereço de IP e conforme os pacotes são direcionados para o endereço de IP anexado a eles, os dados chegam onde são necessários.
+			Uma vez que os pacotes chegam ao seu destino, eles são tratados de forma diferente, dependendo de qual protocolo de transporte é usado em combinação com o IP. Os protocolos de transporte mais comuns são TCP e UDP.
+
+TCP/IP - Transfer Control Protocol - O Protocolo de Controle de Transmissão (TCP) é um protocolo de transporte, o que significa que dita a forma como os dados são enviados e recebidos.
+				Um cabeçalho TCP é incluído na porção de dados de cada pacote que usa TCP/IP. Antes de transmitir dados, o TCP abre uma conexão com o destinatário. 
+				O TCP garante que todos os pacotes cheguem em ordem assim que a transmissão começar. Via TCP, o destinatário reconhecerá o recebimento de cada pacote que chegar.
+				Os pacotes ausentes serão enviados novamente se o recebimento não for confirmado.
+				O TCP foi projetado para confiabilidade, não para velocidade.
+				Como o TCP precisa garantir que todos os pacotes cheguem em ordem, o carregamento de dados via TCP/IP pode demorar mais se alguns pacotes estiverem faltando.
+				O TCP e o IP foram originalmente projetados para serem usados juntos e geralmente são chamados de conjunto TCP/IP.
+				No entanto, outros protocolos de transporte podem ser usados com o IP.
+
+UDP/IP - User Datagram Protocol - O User Datagram Protocol, ou UDP, é outro protocolo de transporte amplamente utilizado. 
+				É mais rápido que o TCP, mas também é menos confiável. O UDP não garante que todos os pacotes sejam entregues e em ordem e não estabelece uma conexão antes de iniciar ou receber transmissões.
+
+INTERNET - É uma rede que engloba todas as demais redes que se comunicam internacionalmente.
+
+WWW - World Wide Web - É uma rede da INTERNET, um conjunto de servidores especializados em HTTP.
+
+HTTP - HyperText Transfer Protocol - HTTP é um protocolo de transferência que possibilita que as pessoas que inserem a URL do seu site na Web possam ver os conteúdos e dados que nele existem.
+				Esse sistema é a base da comunicação que existe em toda a Internet em que os sites e conteúdos que tragam hiperlinks possam ser encontrados mais facilmente pelo público por meio de um clique do mouse ou um toque na tela. 
+				Qualquer servidor que você escolha para hospedar o site da sua empresa tem um programa projetado para receber solicitações HTTP. Portanto, o navegador que você usa é um cliente HTTP que envia solicitações constantemente ao seu servidor.
+				Assim, quando um usuário acessa ou digita a URL do seu site, o navegador cria uma solicitação HTTP na web e a envia ao endereço de IP indicado pela URL.
+				Dessa forma, o servidor recebe essa solicitação e envia os arquivos associados que, nada mais são, do que os sites que acessamos na Internet.
+				
+				HTTP é um protocolo baseado em texto sem conexão. Isso significa que as pessoas que acessam o site da sua empresa enviam solicitações a servidores que as exibem na forma do seu site em formato de texto, imagens, e outros tipos de mídia. Depois que a solicitação é atendida por um servidor, a conexão entre o usuário e o servidor é desconectada.
+
+Uma nova conexão deve ser feita para cada solicitação, isto é, cada vez que alguém acessa o seu site. Em suma, quando alguém digita a URL do seu site em um navegador, é isto que acontece:
+
+   1 - se a URL pertencer a um domínio próprio, o navegador primeiro se conecta a um servidor e recuperará o endereço IP correspondente ao servidor;
+   2 - o navegador se conecta ao servidor e envia uma solicitação HTTP para a página da web desejada (que, neste exemplo, é o seu site);
+   3 - o servidor recebe a solicitação e verifica a página desejada. Se a página existir, o servidor a mostrará. Se o servidor não conseguir encontrar a página solicitada, ele enviará uma mensagem de erro HTTP 404, ou seja, página não encontrada;
+   4 - o navegador, então, recebe a página de volta e a conexão é fechada;
+   5 - caso a página exista (e é isso que se espera), o navegador a analisa e procura outros elementos necessários para concluir a sua exibição, o que inclui seus textos, imagens e afins;
+   6 - para cada um desses elementos, o navegador faz conexões adicionais e solicitações HTTP para o servidor para cada elemento;
+   7 - quando o navegador terminar de carregar todos os elementos, a página será carregada na janela do navegador.
+
+Contudo, para que o usuário tenha uma melhor experiência, todas precisam acontecer rapidamente. Portanto, fique atento à velocidade de carregamento do seu site
+

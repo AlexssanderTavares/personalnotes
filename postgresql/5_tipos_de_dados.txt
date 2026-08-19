@@ -32,7 +32,7 @@ varchar(n) - varchar de tamanho limitado ate n caracteres
 
 TIPO DE DATA E HORA
 
-date - 4 bytes, apenas datas, precisão de 1 dia
+date - 4 bytes, apenas datas, precisão de 1 dia. FORMATO: 'YYYY-MM-DD'
 
 time[without time zone] - 8 bytes, hora sem fuso horário, com precisão de 1 microssegundo
 
@@ -40,7 +40,7 @@ time with time zone - 12 bytes, armazena data e hora com fuso horário, precisã
 
 timestamp with time zone - 8 bytes, armazena data e hora com fuso horário, precisão de 1 microssegundo
 
-timestamp[without time zone] - 8 bytes, armazena data e hora sem fuso horário, precisão de 1 microssegundo
+timestamp[without time zone] - 8 bytes, armazena data e hora sem fuso horário, precisão de 1 microssegundo. FORMATO: '2025-12-31 10:30:00'
 
 interval - 16 bytes, armazena faixas de tempo, com precisão de 1 microssegundo
 

@@ -1,0 +1,57 @@
+git reset Glossário GIT
+$ git config(configuração geral do git)
+		--global(configuração de amplitude global) user.name "Alexssander Tavares"
+		--global core.editor "code -w" (configura o editor de codigo padrão para o GIT)
+		--global init.defaultBranch main (configura o GIT fazendo com que cada novo repositorio principal tenha sua primeira branch como Main Branch)
+		--global core.autocrlf false (configura o GIT para nao converter arquivos .LF para .CRLF, evita conflitos de leitura)
+$ git init (inicializa um novo repositório vazio)
+$ rm -rf .git(remove o repositorio local GIT)
+$ git status (mostra o estado atual do repositório GIT)
+$ git add "arquivo" (inclui um arquivo para ser monitorado pelo GIT)
+||||||||| exemplo.extensão
+||||||||| *.extensão (adiciona todos os arquivos de mesma extensão)
+||||||||| --all ou . (adiciona todos os arquivos)
+$git log (revela o historico das alterações feitas no repositorio GIT)
+|||||||| -p (mostra todas alterações feitas e o que foi mantido dentro de cada commit)
+|||||||| -[numero] (mostra as ultimas linhas relacionadas ao numero inserido)
+|||||||| --oneline (mostra um resumo de poucas linhas dos commits realizados)
+|||||||||||||||||| -[numero] (mostra a(s) ultima(s) linha(s) baseada no numero inserido)
+$git rm (remove arquivo do repositorio GIT)
+||||||| --cached *.extensão (remove todos os arquivos do monitoramento/controle de versão com a mesma extensão declarada)
+||||||| [nome arquivo.extensao] (deleta o arquivo do sistema e do repositorio GIT)
+$git diff (mostra as diferenças entre commits, atuais e passados)
+||||||||| <codigo do commit Ex: ccf4971 99ad03a> (mostra as diferenças entre os commits)
+$git restore --staged [nome do arquivo.ext] - remove o arquivo da Staged Area do controle de versão
+$git commit -m [passa a mensagem direto no console] "Reverter commit(exemplo)"
+$git reset [hash do commit]
+|||||||||| --soft move apenas o ponteiro head para algum outro commit, sem alterar a área de preparo ou o diretório de trabalho. (tira do repositorio local e joga no Staged area)
+|||||||||| --mixed além de mover o ponteiro head, faz com que a área de preparo contenha o espelhamento do commit para o qual o ponteiro head foi movido, porém não afeta o diretório de trabalho. (tira do repositorio local e joga no untracked)
+|||||||||| --hard qualquer trabalho pendente que estava no indice de staging e no diretório de trabalho é perdido
+|||||||||||||||||| HEAD~1(ou qualquer numero de acordo com quantos commits voce quiser voltar) (remove do repositorio o commit apontado e tudo o que esta no Staged naquele momento e joga no untracked)
+$git branch (mostra as branchs do repositorio e em qual delas o usuário está localizado no momento)
+||||||||||| -d nome_da_branch (deleta a branch do repositorio)
+||||||||||| -M nome_da_branch (torna a branch atual em que o usuário está localizado como a branch Main)
+$git checkout (troca de uma branch para outra)
+||||||||||||| -b nome_da_branch (se não existir a branch, cria uma nova branch)
+||||||||||||| nome_da_branch (troca para a branch de nome correspondente)
+$git stash 
+|||||||||| save "nome do save" (salva a branch no estado atual dela para que, ao trocar de branch, não perca as modificações)
+|||||||||| list (mostra todos os saves)
+|||||||||| pop stash@{nº da stash} (da load no save na branch atual em que o usuario está localizado)
+$git merge nome_da_branch (fundi a branch desejada a branch atual em que o usuario está localizado, a branch fundida não é deletada no processo)
+$git tag -a v1.0.0(ou qualquer outra)-beta(alfa ou full) -m "Versao 1.0.0 beta 1" (cria uma marcação no HEAD, no ultimo commit feito com a versão atual indicada na mensagem)
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| hash_de_algum_commit_existente_no_log (cria uma marcação no commit correspondente feito com a versão atual indicada na mensagem)
+|||||||| -d nome_da_tag(ex:v1.0.0)(deleta a tag de nome correspondente no commit atual)
+$git remote add nome_do_repositorio_local git@github.com:AlexssanderTavaresDev/praticas_de_git.git (conecta o repositorio local ao repositorio na nuvem do GitHub de acordo com o link (SSH) do repositorio passado)
+$ ssh-keygen -o (gera uma chave SSH que serve para autenticar o usuario do git ao repositorio no github)
+$git push -u nome_do_repositorio_local main (vincula e sobe o repositorio local para o remoto)
+$git clone git@github.com:AlexssanderTavaresDev/praticas_de_git.git (cria uma copia do repositorio remoto como repositorio local no computador, de acordo com o link passado no comando)
+$git pull (puxa/baixa qualquer novo arquivo que foi inserido ao diretorio e sincroniza com o repositorio local)
+
+GIT Bash Commands
+$ ls - lista tudo que tem na pasta
+$ clear - limpa a interface
+$ echo - realiza uma alteração no arquivo se existente, ou cria um novo se não existente
+$ touch - cria um novo arquivo em branco
+||||||| .gitignore -  faz com que o GIT ignore um determinado arquivo alocando no Estado de Ignorado(3 estados GIT)
+
