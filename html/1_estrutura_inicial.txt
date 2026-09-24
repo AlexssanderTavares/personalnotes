@@ -1,0 +1,26 @@
+Toda estrutura do HTML é composta por tags de abertura e fechamento
+EX: <html></html> a / indica a tag de fechamento
+que formam uma estrutura hierárquica de árvore.
+
+Existem algumas especiais que não precisam de tag de fechamento
+EX: <meta> <!doctype>
+
+Todo documento HTML deve ser iniciado por <!doctype html> que define que aquele documento é um HTML 5 para o navegador no momento em que faz a interpretação do arquivo.
+
+A estrutura começa na tag <html></html> e todo o conteúdo, estruras da página, vão dentro desta tag, vale ressaltar que cada tag é tratado como um objeto do DOM (Document Object Model), serão estes objetos os componentes da página, da mesma forma que os objetos que criamos na programação orientada a objetos, sendo o html em si o objeto raiz do DOM
+
+DICA: ao digitar html:5 ou ! no Visual Studio Code, e pressionar enter, ele já faz a estrutura inteira abaixo automaticamente.
+
+<!DOCTYPE html>
+<html lang="en"> // lang é um atributo para definir o idioma da página
+<head>
+    <meta charset="UTF-8"> // é o padrão que o WASM do navegador vai usar para interpretar os caracteres de texto, como escrevemos em UTF-8 devemos dizer ao navegador que estamos usando esse padrão
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> // viewport é uma tela virtualizada que dispositivos móveis usam no seu navegador, então ela ajusta os tamanhos de um navegador desktop para a mesma equivalência de tamanho e ajuste de um mobile
+    <title>Document</title> // define o titulo da pagina, normalmente é o que será visto na aba do navegador
+    <style> </style> // define o espaço onde as customizações via CSS serão feitas diretamente no           arquivo local do html, não é a melhor abordagem mas serve para casos de detalhes especificos para aquela pagina
+
+</head>
+<body>
+    <p>Hello World</p>
+</body>
+</html>

@@ -1,0 +1,9 @@
+id - > Serve para atribuir um identificador unico a uma tag html, identificado por # no CSS e javascript -> Ex: <h1 id="identificador"></h1>, no CSS e JavaScript #identificador
+
+class -> Cria um identificador que pode ser usado por mais de uma tag diferente, util para estilizar um agrupamento de tags em paginas distintas, identificado por . no CSS e JavaScript -> Ex: 3 paginas html com um cabeçalho <h1 class= "cabeçalho-principal"></h1>, ao estilizar ela via CSS, todas as 3 tags nas 3 paginas podem receber uma mesma estilização, no CSS e JavaScript, .cabeçalho-principal
+
+style -> atribui estilização css diretamente na tag, é por esse atributo que o JavaScript manipula CSS
+
+href -> atribui um endereço, de arquivo, diretorio ou URL/URI, ao elemento como link que ao clicar redireciona o usuário para este endereço
+
+target -> indica se, ao redirecionar o usuário deseja usar a mesma aba do navegador ou abrir em outra (padrão _self, se for para outra aba _blank)
