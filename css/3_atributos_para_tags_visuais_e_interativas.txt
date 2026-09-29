@@ -1,0 +1,145 @@
+Tags de Imagem e Mídia (<img>, <source>, <track>)
+
+    Atributos da tag <img>:
+
+        src: Caminho ou URL da imagem a ser exibida.
+
+        alt: Texto alternativo essencial para acessibilidade e SEO caso a imagem não carregue.
+
+        width / height: Dimensões (largura e altura) da imagem em pixels.
+
+        loading: Controla o carregamento (ex: lazy para carregar apenas quando rolar a página).
+
+        srcset: Define múltiplas imagens para diferentes resoluções ou tamanhos de tela.
+
+        sizes: Informa o tamanho que a imagem ocupará em diferentes condições de layout.
+
+        crossorigin: Gerencia o compartilhamento de recursos de origem cruzada (CORS).
+
+        usemap: Associa a imagem a um mapa de imagem (<map>).
+
+    Atributos da tag <source> (usada dentro de <picture>, <video> ou <audio>):
+
+        srcset: Caminho do arquivo de mídia alternativo.
+
+        media: Condição de mídia (ex: @media query) para escolher o arquivo.
+
+        type: Tipo MIME do arquivo (ex: image/webp).
+
+    Atributos da tag <track> (legendas para <video> ou <audio>):
+
+        kind: Tipo da faixa (ex: subtitles, captions, descriptions).
+
+        src: Caminho para o arquivo de legenda (geralmente formato .vtt).
+
+        srclang: Idioma da legenda (ex: pt-BR, en).
+
+        label: Nome da legenda exibido para o usuário.
+
+        default: Define a faixa como padrão se nenhuma outra for selecionada.
+
+2. Tags de Texto e Tipografia (<q>, <ins>, <del>, <time>, <bdo>, <abbr>)
+
+    <q> (Citação curta em linha):
+
+        cite: URL da fonte de onde a citação foi retirada.
+
+    <ins> (Texto inserido/adicionado) e <del> (Texto deletado/removido):
+
+        cite: URL que explica o motivo da alteração.
+
+        datetime: Data e/ou hora em que a alteração foi feita.
+
+    <time> (Representação de data/hora):
+
+        datetime: Valor normalizado da data/hora para leitura de máquinas e motores de busca (ex: 2026-09-28T23:00:00).
+
+    <bdo> (Substituição de direcionalidade de texto):
+
+        dir: Define obrigatoriamente a direção do texto (ltr ou rtl).
+
+    <abbr> (Abreviação ou sigla):
+
+        title: O texto completo correspondente à abreviação (geralmente exibido como tooltip).
+
+3. Tags de Tabelas (<td>, <th>, <col>)
+
+    Atributos de células (<td> e <th>):
+
+        colspan: Número de colunas que a célula deve ocupar horizontalmente.
+
+        rowspan: Número de linhas que a célula deve ocupar verticalmente.
+
+        headers: IDs das células de cabeçalho (<th>) associadas a esta célula de dados.
+
+    Atributos exclusivos de <th> (Cabeçalho de Tabela):
+
+        scope: Define o escopo do cabeçalho (col para coluna, row para linha, colgroup, rowgroup).
+
+    Atributos da tag <col> (Estilização de colunas):
+
+        span: Número de colunas consecutivas afetadas pela definição.
+
+4. Tags de Metadados e Documento (<meta>, <link>, <base>)
+
+    Atributos da tag <meta> (Metadados do documento):
+
+        name: Nome do metadado (ex: viewport, description, author).
+
+        content: O valor correspondente ao name ou http-equiv (ex: width=device-width, initial-scale=1.0).
+
+        http-equiv: Simula um cabeçalho HTTP (ex: content-type, refresh).
+
+        charset: Define a codificação de caracteres (ex: utf-8).
+
+    Atributos da tag <link> (Recursos externos como CSS e ícones):
+
+        rel: Relacionamento do documento com o recurso (ex: stylesheet, icon, preload).
+
+        href: URL do recurso externo.
+
+        type: Tipo MIME do recurso vinculado.
+
+        media: Condição de mídia em que o recurso deve ser aplicado.
+
+        crossorigin: Configura o CORS para o arquivo vinculado.
+
+    Atributos da tag <base> (URL base para links relativos):
+
+        href: URL base padrão para todas as URLs relativas na página.
+
+        target: Alvo padrão global para os links da página (ex: _blank).
+
+5. Tags Interativas de Botão e Entrada (<button>, <input>)
+
+    Atributos da tag <button>:
+
+        type: Comportamento do botão (submit para enviar formulários, reset para limpar, ou button comum).
+
+        name: Nome do botão enviado junto ao formulário.
+
+        value: Valor associado ao botão no envio.
+
+        disabled: Desativa o botão.
+
+        autofocus: Foca automaticamente no botão ao carregar a página.
+
+    Atributos da tag <input> (variam muito conforme o type):
+
+        type: Tipo de entrada (text, password, email, number, checkbox, radio, file, etc.).
+
+        value: Valor inicial ou atual do campo.
+
+        placeholder: Texto de dica exibido quando o campo está vazio.
+
+        checked (para checkbox/radio): Indica que o item está selecionado por padrão.
+
+        maxlength / minlength: Limites de caracteres permitidos.
+
+        min / max / step (para números/datas): Intervalos e limites numéricos.
+
+        pattern: Expressão regular (Regex) para validação do formato do texto.
+
+        readonly: Torna o campo apenas leitura (mas o valor ainda é enviado).
+
+        accept (para input type="file"): Tipos de arquivos aceitos (ex: image/*).

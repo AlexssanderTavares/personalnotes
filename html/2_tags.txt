@@ -12,12 +12,17 @@ sendo elas:
 <h5></h5>
 <h6></h6>
 
-<p></p> -> delimita o espaço de um parágrafo, ela pode ter texto dentro de seu corpo.
+Tags especiais
+
+<link> -> faz o link de um arquivo externo que interage com o html, um CSS ou JavaScript. Acompanha os atributos rel="TIPO_RELAÇÂO" e href="ENDEREÇO_ARQUIVO"
 
 <br> -> é especial, não possui fechamento, ela serve para quebra de linha (break row)
 
 <hr> -> cria uma linha divisória horizontal
 
+Tags comuns
+
+<p></p> -> delimita o espaço de um parágrafo, ela pode ter texto dentro de seu corpo.
 <span></span> -> ela não faz alteração visual imediata, mas ela é como uma caixa com orientação de linha, então ela delimita uma linha inteira e você pode estilizar especificamente o que há dentro dela através de CSS. É um container genérico em linha.
 
 <div></div> -> é um container genérico com comportamento de bloco, ele delimita um espaço com altura e largura e pode receber qualquer elemento html dentro dela.
@@ -33,6 +38,25 @@ sendo elas:
 <a></a> -> Torna o que esta dentro de seu corpo um link, precisa ser usado junto com o atributo href=""
 
 <img> -> é especial, carrega uma imagem local (pelo endereço de diretório) ou externa por URL, utiliza-se o atributo src="" para o endereço e alt="" para indicar a descrição do que aquela imagem significa, como motores de busca não interpretam imagens, isso os ajuda a identificar
+
+Tabela
+
+<table></table> -> Define o corpo da tabela, os elementos vão ser outras tags internas a ela
+
+<thead></thead> -> Define o cabeçalho da tabela, vai ser uma area para o titulo
+
+<tr></tr> -> define uma linha para a tabela
+
+<th></th> -> define uma coluna
+
+<tbody></tbody> -> define o corpo da tabela, que vira a seguir do <thead>
+
+<td></td> -> define os dados da tabela, o que sera o corpo da tabela
+possui o atributo: colspan="NUM" que define quantas colunas esse dado vai consumir e rowspan faz a mesma coisa, mas para linhas
+
+<caption></caption> -> define uma descrição para a tabela, em texto
+
+<tfoot></tfoot> -> define um rodapé para a tabela, geralmente uma ultima linha com resultados etc
 
 Tags Semanticas
 

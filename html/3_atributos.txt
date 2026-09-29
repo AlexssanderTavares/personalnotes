@@ -1,3 +1,4 @@
+containers (<div>, <section>, <article>, <main>, <aside>, <header>, <footer>, <nav>)
 id - > Serve para atribuir um identificador unico a uma tag html, identificado por # no CSS e javascript -> Ex: <h1 id="identificador"></h1>, no CSS e JavaScript #identificador
 
 class -> Cria um identificador que pode ser usado por mais de uma tag diferente, util para estilizar um agrupamento de tags em paginas distintas, identificado por . no CSS e JavaScript -> Ex: 3 paginas html com um cabeçalho <h1 class= "cabeçalho-principal"></h1>, ao estilizar ela via CSS, todas as 3 tags nas 3 paginas podem receber uma mesma estilização, no CSS e JavaScript, .cabeçalho-principal
@@ -7,3 +8,45 @@ style -> atribui estilização css diretamente na tag, é por esse atributo que 
 href -> atribui um endereço, de arquivo, diretorio ou URL/URI, ao elemento como link que ao clicar redireciona o usuário para este endereço
 
 target -> indica se, ao redirecionar o usuário deseja usar a mesma aba do navegador ou abrir em outra (padrão _self, se for para outra aba _blank)
+
+title: Fornece informações complementares (geralmente exibidas como um tooltip quando o usuário passa o mouse).
+
+hidden: Oculta o elemento da exibição visual na página (atributo booleano).
+
+data-*: Permite criar atributos personalizados para armazenar dados customizados (ex: data-category="menu").
+
+lang: Especifica o idioma do conteúdo inserido dentro do container.
+
+dir: Define a direção do texto (ltr para esquerda para direita, ou rtl para direita para esquerda).
+
+tabindex: Controla se o container pode receber foco e sua ordem na navegação via tecla Tab.
+
+contenteditable: Torna o conteúdo interno do container editável diretamente pelo usuário no navegador.
+
+translate: Indica se o conteúdo do container deve ou não ser traduzido por ferramentas automáticas.
+
+spellcheck: Ativa ou desativa a verificação ortográfica para conteúdos editáveis.
+
+ARIA(ACESSIBILIDADE)
+
+role: Define o papel explícito do elemento na árvore de acessibilidade (ex: role="region", role="banner", role="complementary").
+
+aria-label: Fornece um texto descritivo para o container quando ele não possui um rótulo visível.
+
+aria-labelledby: Associa o container ao id de outro elemento que serve como seu título.
+
+aria-describedby: Aponta para o id de um elemento que fornece uma descrição detalhada do container.
+
+aria-hidden: Esconde o elemento e seus filhos de leitores de tela (true ou false).
+
+aria-expanded: Comum em containers dinâmicos (como menus retráteis ou acordeões), indicando se estão abertos ou fechados.
+
+Atributos de Eventos (Event Handlers)
+
+Embora possam ser inseridos em praticamente qualquer elemento, são frequentemente usados em containers interativos:
+
+onclick / ondblclick: Disparam ações quando o usuário clica no container.
+
+onmouseover / onmouseout: Detectam a entrada e a saída do cursor do mouse.
+
+onkeydown / onkeyup: Monitoram interações e comandos pelo teclado.

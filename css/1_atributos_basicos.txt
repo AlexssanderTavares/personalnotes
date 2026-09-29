@@ -1,0 +1,22 @@
+Modelo de Caixa e Dimensões (Box Model)
+
+width / height: Definem a largura e a altura do container (podem usar valores fixos, percentuais ou flexíveis).
+
+padding: Controla o espaçamento interno entre a borda do container e os elementos filhos.
+
+margin: Controla o espaçamento externo ao redor do container em relação a outros elementos da página.
+
+2. Layout Moderno (Flexbox e Grid)
+
+display: Transforma o container em um sistema de layout avançado, como flex ou grid (além dos tradicionais block e inline-block).
+
+justify-content / align-items: Alinham e distribuem os elementos filhos horizontal e verticalmente dentro do container.
+
+gap: Define o espaçamento uniforme (intervalo) entre os elementos filhos do container.
+
+3. Posicionamento e Comportamento
+
+position: Define como o container se posiciona no fluxo da página (relative, absolute, fixed ou sticky).
+
+overflow: Determina o comportamento do container quando o conteúdo interno é maior que seu tamanho (hidden, scroll ou auto).
+

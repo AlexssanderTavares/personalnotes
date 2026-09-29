@@ -1,0 +1,107 @@
+<form> (Container de Formulário)
+
+    action: Define a URL para onde os dados do formulário serão enviados.
+
+    method: Especifica o método HTTP para envio (GET ou POST).
+
+    enctype: Define como os dados do formulário devem ser codificados ao enviar (ex: multipart/form-data).
+
+    target: Indica onde exibir a resposta após submeter o formulário (ex: _blank para nova aba).
+
+    autocomplete: Ativa ou desativa o preenchimento automático (on ou off).
+
+    novalidate: Atributo booleano que desativa a validação nativa dos campos ao enviar.
+
+    name: Atribui um nome para identificar o formulário no JavaScript ou DOM.
+
+    accept-charset: Especifica as codificações de caracteres aceitas.
+
+2. <select> e <optgroup> (Containers de Opções)
+
+    Atributos exclusivos do <select>:
+
+        multiple: Permite que o usuário selecione múltiplas opções.
+
+        size: Define o número de opções visíveis na lista sem precisar rolar.
+
+        required: Torna obrigatória a seleção de um item.
+
+        autofocus: Foca automaticamente no elemento ao carregar a página.
+
+        form: Associa o select a um formulário específico através do id do form (mesmo estando fora dele).
+
+    Atributos exclusivos do <optgroup> (agrupa opções dentro do select):
+
+        label: Define o título ou rótulo descritivo para o grupo de opções.
+
+        disabled: Desativa todo o grupo de opções de uma vez.
+
+3. <fieldset> (Container de Agrupamento de Campos)
+
+    name: Define o nome do grupo de campos.
+
+    disabled: Desativa todos os elementos interativos contidos dentro do fieldset.
+
+    form: Associa o fieldset a um formulário específico pelo id.
+
+4. <details> e <dialog> (Containers Interativos)
+
+    Atributos do <details> (conteúdo expansível):
+
+        open: Atributo booleano que indica se o conteúdo está visível/aberto por padrão.
+
+    Atributos do <dialog> (janela modal / pop-up):
+
+        open: Indica que a caixa de diálogo está ativa e visível na tela.
+
+5. <ol> (Container de Lista Ordenada)
+
+    type: Define o tipo de marcador da lista (1 para números, a para letras minúsculas, A para maiúsculas, i para romanos, etc.).
+
+    start: Define o número inicial da contagem (ex: começar do 5).
+
+    reversed: Atributo booleano que inverte a contagem da lista (do maior para o menor).
+
+6. <a> (Link / Âncora - Container de Conteúdo)
+
+    href: Define o destino do link (URL).
+
+    target: Define onde o link será aberto (_blank, _self, etc.).
+
+    rel: Define a relação entre a página atual e o destino (ex: nofollow, noopener).
+
+    download: Indica que o link deve baixar o recurso em vez de navegá-lo.
+
+    hreflang: Informa o idioma do documento vinculado.
+
+    type: Indica o tipo MIME do recurso vinculado.
+
+7. <iframe_> (Container de Conteúdo Externo)
+
+    src: URL da página ou conteúdo incorporado.
+
+    width / height: Dimensões visuais do frame.
+
+    name: Nome do iframe para referência em scripts ou links.
+
+    sandbox: Aplica restrições de segurança ao conteúdo incorporado.
+
+    allow: Especifica diretrizes de permissão (ex: câmera, microfone, autoplay).
+
+    loading: Controla o carregamento (lazy para carregamento sob demanda ou eager).
+
+8. <video> e <audio> (Containers de Mídia)
+
+    src: Caminho do arquivo de mídia.
+
+    controls: Exibe os controles de reprodução nativos (play, pause, volume).
+
+    autoplay: Inicia a reprodução automaticamente assim que carregado.
+
+    loop: Reinicia a mídia automaticamente ao terminar.
+
+    muted: Inicia a reprodução sem som.
+
+    preload: Informa ao navegador como carregar o arquivo (auto, metadata, none).
+
+    poster (Apenas <video>): Imagem de capa exibida antes de o vídeo iniciar.
