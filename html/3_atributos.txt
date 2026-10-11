@@ -27,6 +27,14 @@ translate: Indica se o conteúdo do container deve ou não ser traduzido por fer
 
 spellcheck: Ativa ou desativa a verificação ortográfica para conteúdos editáveis.
 
+PERSONALIZADOS
+
+No HTML podemos criar nossos próprios atributos para os elementos, basta escrever o atributo dentro da tag e não atribuir valor
+Ex: <h1 meu-atributo></h1>
+
+Também pode ter valor atribuido ao atributo para dar mais especificidade como seletor
+Ex: <h1 meu-atributo="seletor_especifico"></h1>
+
 ARIA(ACESSIBILIDADE)
 
 role: Define o papel explícito do elemento na árvore de acessibilidade (ex: role="region", role="banner", role="complementary").

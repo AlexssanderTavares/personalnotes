@@ -1,0 +1,29 @@
+*{} -> seleciona todos os elementos da pagina,ou partindo de um ponto referencia em uma hierarquia
+
+geralmente usado para resetar espaçamentos que ja vem com valores padrão numa pagina inteira e definir o box-sizing da pagina
+
+tag{} -> seleciona todas as tags de mesmo nome do documento
+
+tag tag tag ...{} -> seleciona a ultima tag dentro de uma hierarquia
+
+tag *{} -> seleciona todas as tags a partir de uma tag pai
+
+tag , tag{} -> seleciona mais de uma tag para receber a mesma estilização
+
+.nome_classe{} -> seleciona o elemento de acordo com o nome dado no atributo class
+
+tag.nome_class{} -> somente seleciona a tag especifica que seja da mesma class especificada
+
+.classPai > .classFilho {} -> seleciona o filho, ou filhos, dentro de uma classe pai
+
+tag1+tag2 {} -> seleciona a tag2 que é seguinte de tag1, tag2 é irmã de tag1 na hierarquia
+
+tag1~tag2 {} -> seleciona TODAS tag2 que é seguinte de tag1, tag2 é irmã de tag1 na hierarquia
+
+[seleciona_por_atributo_personalizado_ou_nao] {} -> seleciona o elemento, ou elementos, pelo atributo do elemento
+
+[atributo^="começa_com"]{} -> seleciona todos os elementos, de mesmo atributo com valor que comece com o valor que foi passado ao atributo
+
+[atributo$="termina_com"]{} -> seleciona todos os elementos, de mesmo atributo com valor que termine com o valor que foi passado ao atributo
+
+[atributo*="contem"]{} -> seleciona todos os elementos, de mesmo atributo com valor que contenha o valor que foi passado ao atributo
