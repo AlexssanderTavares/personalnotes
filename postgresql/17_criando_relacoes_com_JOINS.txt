@@ -44,3 +44,46 @@ Exemplo 2:
     WHERE PE.cod_pedido = 9; // usamos filtragem para fazer buscas específicas
 
     //podemos usar o Alias como nome substituto para a tabela, que é declarado aqui e fica disponível em toda a query. Podemos declarar o Alias sempre que a cláusula aponta para outra tabela (FROM, JOIN)
+
+Exemplo 3 - CRIANDO A TABELA COM O RELACIONAMENTO:
+
+CREATE TABLE Product(
+	barcode VARCHAR(13) PRIMARY KEY NOT NULL, /* padrão brasileiro EAN-13 */
+	name VARCHAR(100) NOT NULL,
+	quantity BIGINT NOT NULL DEFAULT 0,
+	price NUMERIC(18, 2) NOT NULL DEFAULT 0.0,
+	CONSTRAINT chk_barcode CHECK(regexp_match(barcode, '^[0-9]{13}$') IS NOT NULL)
+);
+
+/* INSERIMOS OS PRODUTOS NA TABELA */
+INSERT INTO Product(barcode, name, quantity, price) VALUES('7898456321412', 'Leitão de saco', 20, 2.19);INSERT INTO Product(barcode, name, quantity, price) VALUES('7898456321412', 'Leitão de saco', 20, 2.19);
+INSERT INTO Product(barcode, name, quantity, price) VALUES('7898436921412', 'Dollyinho amiguinho', 10, 4.);
+INSERT INTO Product(barcode, name, quantity, price) VALUES('7898436921321', 'Globglogabgalab', 5, 6.49);
+
+CREATE TABLE Pedido(
+	num SERIAL PRIMARY KEY NOT NULL,
+	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+/* PARA ESTE EXEMPLO, PRECISAREMOS CRIAR UMA TABELA INTERMEDIÁRIA, POIS OS DADOS SE RELACIONARIAM EM N,N E ISSO NÃO PODE ACONTECER, ENTÃO PRECISAREMOS SIMPLIFICAR A RELAÇÃO EM N,1 E 1,N, ENTÃO CRIAMOS A TABELA QUE JUNTA CADA PRODUTO EM UM UNICO PEDIDO UNITÁRIO */
+CREATE TABLE Produto_Pedido(
+	id SERIAL PRIMARY KEY NOT NULL,
+	produto VARCHAR(13) NOT NULL REFERENCES Product(barcode),
+	pedido BIGINT NOT NULL REFERENCES Pedido(num),
+	quantity BIGINT NOT NULL DEFAULT 1
+);
+
+INSERT INTO Pedido(num, created_at) VALUES(DEFAULT, DEFAULT); /* USAMOS DEFAULT NA PASSAGEM DOS VALORES POIS AMBOS OS CAMPOS ESTÃO DEFINIDOS PARA TEREM SEUS VALORES GERADOS AUTOMATICAMENTE */
+
+INSERT INTO Produto_Pedido(produto, pedido, quantity) VALUES('7898456321412', 1, 10);
+INSERT INTO Produto_Pedido(produto, pedido, quantity) VALUES('7898436921412', 1, 10);
+INSERT INTO Produto_Pedido(produto, pedido, quantity) VALUES('7898456321412', 1, 5);
+INSERT INTO Produto_Pedido(produto, pedido, quantity) VALUES('7898436921321', 1, 2);
+
+CREATE TABLE Total_Pedido AS SELECT PP.pedido, PD.created_at, PP.produto, PR.name, PP.quantity, PR.price, (PP.quantity * PR.price) AS total FROM Produto_Pedido PP
+INNER JOIN Pedido PD
+ON PP.pedido = PD.num
+INNER JOIN Product PR
+ON PP.produto = PR.barcode;
+
+SELECT * FROM Total_Pedido;
