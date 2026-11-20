@@ -1,0 +1,16 @@
+Dentro do contexto dos bancos de dados relacionais, todas as querys passam por um ciclo de vida, onde no final dele pode ser confirmado ou desfeito.
+Partindo dessa prerrogativa, quando executamos uma Query diretamente (um SELECT por exemplo), ela vai começar, vai executar a instrução e vai confirmar diretamente. Neste caso ela nunca desfaz no final.
+Mas, podemos definir esse ciclo de vida manualmente.
+Antes de executar a query, podemos executar a instrução BEGIN; para iniciar uma transação (transaction), e a partir daí, executar qualquer outra instrução.
+
+BEGIN;
+
+UPDATE entity SET atribute = 'VALOR' WHERE condition;
+
+COMMIT;
+
+No exemplo acima, ele vai executar um update na entidade que se encaixa na condição e vai atualizar o valor do atributo e vai confirmar.
+Mas se algo estiver errado, ou der errado por alguma razão aqui ele vai entrar em estado de falha(ABORTED), e precisará que o bloco seja encerrado, no caso acima, o COMMIT vai funcionar como um ROLLBACK pois o banco não vai permitir registrar o dado com erro indiferente se existem mais comandos subsequentes, ele vai registrar na memória primária como ABORTED e vai precisar ser encerrado, outro bloco deve ser iniciado com as correções.
+
+Podemos executar tudo num único bloco, ou podemos só iniciar com BEGIN, e realizar instruções uma a uma e no final, podemos executar um COMMIT ou ROLLBACK isolado, até então, todas as instruções executadas sem erro ficam registradas na memória em estado TRANSIENT e fica aguardando a confirmação final.
+

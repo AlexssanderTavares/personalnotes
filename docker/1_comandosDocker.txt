@@ -1,0 +1,20 @@
+O Docker é uma plataforma de código aberto usada para criar, implantar e executar aplicações dentro de contêineres - ambientes leves e isolados que empacotam o código do software junto com todas as suas dependências, libs e configs.
+Funciona através de arquitetura cliente-servidor e utiliza recursos nativos do sistema operacional (principalmente do kernel Linux) para isolar processos.
+
+Diferença de imagem e container
+Imagem é o programa isolado, como se fosse uma imagem de disco, que ao ser empacotado em um container, pode ser executado de forma isolada
+Container é o ambiente isolante, que vai isolar uma ou mais imagens num ambiente de execução próprio
+
+docker
+|||||| ps -> Lista todos os containers em execução pelo Docker Daemon
+||||||||| -a -> Lista todos os containers criados
+||||||||| -l -> lista o ultimo container executado
+||||||||| -d -> roda o processo do docker em background(geralmente usado para containers)
+|||||| --version -> Mostra a versão atual instalada do Docker
+|||||| run [imageName]:version -> Baixa(se não houver na maquina host) a imagem do container direto do dockerHUB e executa um container
+|||||||||| --name containerName [imageName]:version -> Roda um container com um nome personalizado
+||||||||||||||||||||||||||||||| -p 5432:5432 [imageName]:version -> Roda o container com nome personalizado e com porta de acesso espelhada do host, a estrutura das portas é porta_maquina_host:porta_container_docker
+|||||||||||||||||||||||||||||||||||||||||||| -e POSTGRES_PASSWORD=valor(EXEMPLO) -> -e define uma variavel de ambiente, algumas imagens necessita de variaveis de ambiente com valores definidas para serem criadas, mais de um -e pode ser usado na execução de um container docker
+|||||| network create -> cria uma network, mais detalhes no documento 2
+|||||| stats -> mostra todos os containers e uso de recursos, estados etc, em tempo real
+|||||| images -> mostra todas as imagens que estão salvas na maquina host (que já foram baixadas)

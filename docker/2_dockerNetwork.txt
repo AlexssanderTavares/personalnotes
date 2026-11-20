@@ -1,0 +1,11 @@
+Container Networks servem para que containers se comuniquem entre si
+Como cada container se comporta como se fosse uma Maquina individual, cada uma teria na prática um localhost próprio (levando em conta que foi definido uma porta espelhando uma porta da maquina host), então elas não se comunicam através de um localhost e nem enxergam o localhost de outra maquina
+
+para criar uma Network basta executar o comando abaixo:
+docker network create name-network
+
+Ao criar um container, basta apontar esse mesmo nome dado a network apos a flag --network no comando de criação
+
+A partir disso, os containers vão se enxergar pelas portas que for definidas na criação do container, geralmente a documentação recomenda uma porta padrão para a imagem (ex: postgresql 5432 e pgadmin 80), e não utilizaremos a porta espelhada.
+
+Porta do host/espelhada -> 15432:5432 <- porta do container
